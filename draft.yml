@@ -1,0 +1,22 @@
+models:
+  Pet:
+    name: string
+    species: string
+    weight: integer
+    sterilized: boolean
+    relationships:
+      belongsToMany: Tag
+
+  Tag:
+    name: string
+    relationships:
+      belongsToMany: Pet
+
+seeders: Pet, Tag
+
+controllers:
+  Pet:
+    resource: index, show, api.store, api.update, api.destroy
+
+  Tag:
+    resource: index, show, api.store, api.update, api.destroy
